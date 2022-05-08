@@ -59,23 +59,35 @@
 
 #endif
 
-#define STENO_ROW_1 \
-    STN_OFF,  STN_S1,  STN_TL,  STN_PL,  STN_HL, STN_ST1,                      STN_ST3,  STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR
+#define STENO_ROW_1_LEFT \
+    STN_OFF,  STN_S1,  STN_TL,  STN_PL,  STN_HL, STN_ST1
 
-#define STENO_ROW_2 \
-    XXXXXXX,  STN_S2,  STN_KL,  STN_WL,  STN_RL, STN_ST2,                      STN_ST4,  STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR
+#define STENO_ROW_1_RIGHT \
+    STN_ST3,  STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR
 
-#define STENO_ROW_3 \
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define STENO_ROW_2_LEFT \
+    XXXXXXX,  STN_S2,  STN_KL,  STN_WL,  STN_RL, STN_ST2
 
-#define STENO_ROW_4 \
-    /**/                                  STN_A,   STN_O,  STN_NB,     STN_NC,   STN_E,   STN_U
+#define STENO_ROW_2_RIGHT \
+    STN_ST4,  STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR
+
+#define STENO_ROW_3_HALF \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+
+#define STENO_ROW_3_LEFT STENO_ROW_3_HALF
+#define STENO_ROW_3_RIGHT STENO_ROW_3_HALF
+
+#define STENO_ROW_4_LEFT \
+    STN_A,    STN_O,   STN_NB
+
+#define STENO_ROW_4_RIGHT \
+    STN_NC,   STN_E,    STN_U
 
 #define STENO_LAYER  \
-        STENO_ROW_1, \
-        STENO_ROW_2, \
-        STENO_ROW_3, \
-        STENO_ROW_4
+        STENO_ROW_1_LEFT, STENO_ROW_1_RIGHT, \
+        STENO_ROW_2_LEFT, STENO_ROW_2_RIGHT, \
+        STENO_ROW_3_LEFT, STENO_ROW_3_RIGHT, \
+        STENO_ROW_4_LEFT, STENO_ROW_4_RIGHT
 
 void matrix_init_steno(void);
 
